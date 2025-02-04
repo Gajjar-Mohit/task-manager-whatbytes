@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "111511913751",
+    "project_id": "taskmanager-whatbytes",
+    "storage_bucket": "taskmanager-whatbytes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111511913751:android:23026d1daa3054c3ee2352",
+        "android_client_info": {
+          "package_name": "com.example.taskmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUqTSN5T6pe-FgajlD-kO3go_dDIC0ehs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
