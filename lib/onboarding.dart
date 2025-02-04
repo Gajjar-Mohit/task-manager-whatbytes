@@ -55,7 +55,6 @@ class _OnboardingState extends State<Onboarding> {
                 children: [
                   Column(
                     children: [
-                      
                       Container(
                         height: 200,
                         decoration: BoxDecoration(

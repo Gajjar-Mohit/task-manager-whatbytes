@@ -116,11 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is LoggedOut) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => const Onboarding(),
-            ),
-          );
+          Navigator.of(context).popUntil((route) => route.isFirst);
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const Onboarding()));
         }
       },
       builder: (context, state) {
@@ -340,7 +338,9 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(
           'Hi There!',
           textAlign: TextAlign.start,
-          style: TextStyle(fontWeight: FontWeight.bold, ),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       actions: [
@@ -369,8 +369,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ElevatedButton(
             onPressed: () {
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+
               _authBloc.add(SignOut());
-              Navigator.pop(context);
             },
             child: const Text('Logout'),
           ),
